@@ -10,6 +10,8 @@
 
 本项目的后端是我另一个项目使用Flask作为框架，地址在[这里](https://github.com/WRAllen/FlaskRESTful)
 
+PS：之前没有接触过Vue，现在接触感觉是个很棒的框架
+
 ## 安装项目需要的包
 ```
 npm install
