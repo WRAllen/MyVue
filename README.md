@@ -10,8 +10,6 @@
 
 本项目的后端是我另一个项目使用Flask作为框架，地址在[这里](https://github.com/WRAllen/FlaskRESTful)
 
-PS：我是完全不懂vue的，希望有vue的大神可以指导指导
-
 ## 安装项目需要的包
 ```
 npm install
