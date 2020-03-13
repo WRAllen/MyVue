@@ -14,6 +14,7 @@ import Article from './components/Article'
 import CUArticle from './components/CUArticle'
 import Home from './components/Home'
 import Login from './components/Login'
+import Sign from './components/Sign'
 import Test from './components/Test'
 // vuex
 import store from './store'
@@ -36,6 +37,7 @@ const router = new VueRouter({
     { path: "/Article", component: Article, name: "Article", meta: { auth: true } },
     { path: "/CUArticle", component: CUArticle, name: "CUArticle", meta: { auth: true } },
     { path: "/login", component: Login, name: "login" },
+    { path: "/sign", component: Sign, name: "sign" },
     { path: "/test", component: Test, meta: { auth: true } }
   ]
 })

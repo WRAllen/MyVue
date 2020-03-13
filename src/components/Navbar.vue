@@ -27,6 +27,7 @@
         </b-nav-item-dropdown>
         <b-navbar-nav v-else right>
           <b-nav-item to="/login">登录</b-nav-item>
+          <b-nav-item to="/sign">注册</b-nav-item>
         </b-navbar-nav>
       </b-navbar-nav>
     </b-collapse>

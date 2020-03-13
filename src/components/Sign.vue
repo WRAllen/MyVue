@@ -16,8 +16,18 @@
           ></b-form-input>
         </b-form-group>
 
+        <b-form-group label="再次输入密码:" label-for="PasswordCopy">
+          <b-form-input
+            type="password"
+            id="PasswordCopy"
+            v-model="form.PasswordCopy"
+            required
+            placeholder="再次输入密码"
+          ></b-form-input>
+        </b-form-group>
+
         <b-button to="/" variant="info">返回</b-button>
-        <b-button @click="Login" variant="danger">登录</b-button>
+        <b-button @click="Sign" variant="danger">注册</b-button>
       </b-form>
     </b-row>
   </b-container>
@@ -29,34 +39,34 @@ export default {
     return {
       form: {
         UserName: "",
-        Password: ""
+        Password: "",
+        PasswordCopy: ""
       }
     };
   },
   methods: {
-    Login() {
+    Sign() {
       if (this.form.UserName != "" && this.form.Password != "") {
-        this.axios
-          .post(this.$store.state.BASEURL + "/login", this.form)
-          .then(response => {
-            if (response.data.code == 204) {
-              alert(response.data.message);
-            } else {
-              this.$store.commit("ChangeLoginState", {
-                IsLogin: true,
-                UserName: this.form.UserName,
-                Token: response.data.Token,
-                UserID: response.data.UserID
-              });
-              this.$router.push("/home");
-            }
-          });
+        if (this.form.Password != this.form.PasswordCopy) {
+          alert("两次输入密码不一样!");
+        } else {
+          this.axios
+            .post(this.$store.state.BASEURL + "/user", this.form)
+            .then(response => {
+              if (response.data.code == 204) {
+                alert(response.data.message);
+              } else {
+                alert("注册成功！请进行登录");
+                this.$router.push("/login");
+              }
+            });
+        }
       } else {
         alert("用户名或者密码不能为空!");
       }
     }
   },
-  mounted() {
+  created() {
     this.$parent.show_nav = false;
   },
   destroyed() {
