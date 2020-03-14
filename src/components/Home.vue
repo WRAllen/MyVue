@@ -4,7 +4,8 @@
       <b-col col lg="3" md="6" sm="12" v-for="(data, index) in datas" :key="index">
         <b-card
           :title="data.Title"
-          img-src="https://picsum.photos/600/300/?image=25"
+          :img-src="`https://picsum.photos/600/300/?image=`+data.ID"
+          @click="jump(data.ID)"
           img-alt="Image"
           img-top
           tag="article"
@@ -12,8 +13,6 @@
           class="mb-2"
         >
           <b-card-text>{{data.Text}}</b-card-text>
-
-          <b-button variant="primary" @click="jump(data.ID)">查看详情</b-button>
         </b-card>
       </b-col>
     </b-row>

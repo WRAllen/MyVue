@@ -7,7 +7,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item to="/home" exact exact-active-class="active">主页</b-nav-item>
-        <b-nav-item to="/article" exact exact-active-class="active">测试</b-nav-item>
+        <b-nav-item to="/test" exact exact-active-class="active">测试</b-nav-item>
         <b-nav-item to="/test" exact exact-active-class="active">测试</b-nav-item>
       </b-navbar-nav>
 
