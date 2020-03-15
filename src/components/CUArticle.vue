@@ -38,7 +38,6 @@ export default {
     };
   },
   mounted() {
-    console.log("===", this.form.ArticleID);
     if (this.form.ArticleID != "") {
       this.axios
         .get(this.$store.state.BASEURL + "/article/single", {

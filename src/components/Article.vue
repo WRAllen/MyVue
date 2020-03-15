@@ -5,7 +5,7 @@
         <div>
           <b-button to="/home" variant="warning">返回</b-button>
           <b-button variant="success" v-if="own" @click="ChangeArticle">修改</b-button>
-          <b-button variant="danger" v-if="own">删除</b-button>
+          <b-button variant="danger" v-if="own" @click="DeleteArticle">删除</b-button>
         </div>
       </b-col>
     </b-row>
@@ -67,6 +67,20 @@ export default {
         name: "CUArticle",
         params: { ArticleID: this.ArticleID }
       });
+    },
+    DeleteArticle() {
+      this.axios
+        .delete(this.$store.state.BASEURL + "/article", {
+          params: { ArticleID: this.ArticleID }
+        })
+        .then(response => {
+          if (response.data.code == 204) {
+            alert(response.data.message);
+          } else {
+            alert("文章删除成功");
+          }
+          this.$router.push("/home");
+        });
     }
   }
 };
