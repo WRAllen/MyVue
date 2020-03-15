@@ -38,7 +38,7 @@ const router = new VueRouter({
     { path: "/CUArticle", component: CUArticle, name: "CUArticle", meta: { auth: true } },
     { path: "/login", component: Login, name: "login" },
     { path: "/sign", component: Sign, name: "sign" },
-    { path: "/test", component: Test, meta: { auth: true } }
+    { path: "/test", component: Test }
   ]
 })
 
