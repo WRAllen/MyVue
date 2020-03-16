@@ -38,7 +38,7 @@ export default {
     };
   },
   mounted() {
-    if (this.form.ArticleID != "") {
+    if (this.form.ArticleID != undefined) {
       this.axios
         .get(this.$store.state.BASEURL + "/article/single", {
           params: { ArticleID: this.form.ArticleID }
@@ -52,7 +52,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      if (this.form.ArticleID == "") {
+      if (this.form.ArticleID == undefined) {
         this.axios
           .post(this.$store.state.BASEURL + "/article", this.form)
           .then(response => {
