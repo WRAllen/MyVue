@@ -16,6 +16,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Sign from './components/Sign'
 import Test from './components/Test'
+import TestTwo from './components/TestTwo'
 // vuex
 import store from './store'
 
@@ -38,7 +39,8 @@ const router = new VueRouter({
     { path: "/CUArticle", component: CUArticle, name: "CUArticle", meta: { auth: true } },
     { path: "/login", component: Login, name: "login" },
     { path: "/sign", component: Sign, name: "sign" },
-    { path: "/test", component: Test }
+    { path: "/test", component: Test },
+    { path: "/test_two", component: TestTwo }
   ]
 })
 

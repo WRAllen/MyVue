@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="my-5">
     <b-row align-h="center">
       <b-form>
         <b-form-group label="用户名:" label-for="UserName">

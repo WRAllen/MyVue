@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="page-home text-center my-5">
     <b-row>
       <b-col col lg="3" md="6" sm="12" v-for="(data, index) in datas" :key="index">
         <b-card

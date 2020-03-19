@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Navbar v-show="show_nav" />
-    <b-alert v-model="show_message" variant="warning" dismissible>{{alert_message}}</b-alert>
-    <router-view></router-view>
+    <b-container fluid>
+      <b-alert v-model="show_message" variant="warning" dismissible>{{alert_message}}</b-alert>
+      <router-view></router-view>
+    </b-container>
   </div>
 </template>
 
