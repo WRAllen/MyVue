@@ -28,7 +28,8 @@ export default {
     return {
       page: 1,
       page_info: "下拉查看更多",
-      datas: []
+      datas: [],
+      requesting: false
     };
   },
   methods: {
@@ -36,41 +37,42 @@ export default {
       this.$router.push({ name: "Article", params: { ArticleID: id } });
     },
     scroll() {
-      let isLoading = false;
-      // 每次滚动滚轴都会触发这个函数
-      window.onscroll = () => {
-        // 距离底部200px时加载一次
-        let bottomOfWindow =
-          document.documentElement.offsetHeight -
-            document.documentElement.scrollTop -
-            window.innerHeight <=
-          50;
-        console.log("bottomOfWindow", bottomOfWindow, "isLoading", isLoading);
-        if (bottomOfWindow && isLoading == false) {
-          isLoading = true;
-          this.axios
-            .get("http://112.124.104.214:5000/article", {
-              params: { Page: this.page }
-            })
-            .then(response => {
-              if (response.data.length == 0) {
-                this.page_info = "没有内容了";
-              } else {
-                console.log("response.data", response.data);
-                console.log(this.datas);
-                this.datas = this.datas.concat(response.data);
-                console.log("合并后", this.datas);
-                isLoading = false;
-                this.page += 1;
-              }
-            });
-        }
-      };
+      console.log("开始滚动");
+      // 距离底部200px时加载一次
+      let bottomOfWindow =
+        document.documentElement.offsetHeight -
+          document.documentElement.scrollTop -
+          window.innerHeight <=
+        50;
+      if (bottomOfWindow && this.requesting == false) {
+        console.log("开始请求");
+        this.requesting = true;
+        this.axios
+          .get("http://112.124.104.214:5000/article", {
+            params: { Page: this.page }
+          })
+          .then(response => {
+            if (response.data.length == 0) {
+              this.page_info = "没有内容了";
+            } else {
+              console.log("response.data", response.data);
+              console.log(this.datas);
+              this.datas = this.datas.concat(response.data);
+              console.log("合并后", this.datas);
+              this.requesting = false;
+              this.page += 1;
+            }
+          });
+      }
     }
   },
   mounted() {
-    console.log("mounted");
-    this.scroll();
+    // 因为这个是加在window上的，如果不remove其他页面也有效果
+    window.addEventListener("scroll", this.scroll);
+  },
+  destroyed() {
+    // remove滚动监听，避免其他页面也触发这个
+    window.removeEventListener("scroll", this.scroll);
   },
   created() {
     this.axios
