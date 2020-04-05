@@ -40,7 +40,7 @@ export default {
   mounted() {
     if (this.form.ArticleID != undefined) {
       this.axios
-        .get(this.$store.state.BASEURL + "/article/single", {
+        .get(this.$store.state.BASEURL + "/article", {
           params: { ArticleID: this.form.ArticleID }
         })
         .then(response => {

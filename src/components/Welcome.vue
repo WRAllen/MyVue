@@ -26,6 +26,12 @@ export default {
         this.news = this.news.concat(response.data);
       });
     this.page += 1;
+  },
+  mounted() {
+    this.$parent.show_nav = true;
+  },
+  destroyed() {
+    this.$parent.show_nav = true;
   }
 };
 </script>

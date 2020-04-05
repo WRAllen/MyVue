@@ -11,9 +11,7 @@
           tag="article"
           style="max-width: 20rem;"
           class="mb-2"
-        >
-          <b-card-text>{{data.Text}}</b-card-text>
-        </b-card>
+        ></b-card>
       </b-col>
     </b-row>
     <b-row>
@@ -34,7 +32,7 @@ export default {
   },
   methods: {
     jump(id) {
-      this.$router.push({ name: "Article", params: { ArticleID: id } });
+      this.$router.push({ name: "article", params: { ArticleID: id } });
     },
     scroll() {
       console.log("开始滚动");
@@ -48,17 +46,14 @@ export default {
         console.log("开始请求");
         this.requesting = true;
         this.axios
-          .get("http://112.124.104.214:5000/article", {
+          .get(this.$store.state.BASEURL + "/article_list", {
             params: { Page: this.page }
           })
           .then(response => {
             if (response.data.length == 0) {
               this.page_info = "没有内容了";
             } else {
-              console.log("response.data", response.data);
-              console.log(this.datas);
               this.datas = this.datas.concat(response.data);
-              console.log("合并后", this.datas);
               this.requesting = false;
               this.page += 1;
             }
@@ -76,7 +71,7 @@ export default {
   },
   created() {
     this.axios
-      .get(this.$store.state.BASEURL + "/article", {
+      .get(this.$store.state.BASEURL + "/article_list", {
         params: { Page: this.page }
       })
       .then(response => {

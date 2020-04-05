@@ -19,6 +19,9 @@ import Test from './components/Test'
 import TestTwo from './components/TestTwo'
 // vuex
 import store from './store'
+// markdown
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 
 Vue.config.productionTip = false
@@ -29,14 +32,16 @@ Vue.use(vueAxios, axios)
 // bootstrapVue
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+// markdown
+Vue.use(mavonEditor)
 
 const router = new VueRouter({
   mode: "history",
   routes: [
     { path: "/", component: Welcome, meta: { auth: false } },
     { path: "/home", component: Home, meta: { auth: false } },
-    { path: "/Article", component: Article, name: "Article", meta: { auth: true } },
-    { path: "/CUArticle", component: CUArticle, name: "CUArticle", meta: { auth: true } },
+    { path: "/article", component: Article, name: "article", meta: { auth: false } },
+    { path: "/cu_article", component: CUArticle, name: "cu_article", meta: { auth: true } },
     { path: "/login", component: Login, name: "login" },
     { path: "/sign", component: Sign, name: "sign" },
     { path: "/test", component: Test },

@@ -11,15 +11,14 @@
     </b-row>
     <b-row>
       <b-col cols="12">
-        <b-card>
-          <b-media>
-            <template v-slot:aside>
-              <b-img :src="`https://picsum.photos/600/300/?image=`+ArticleID"></b-img>
-            </template>
-
-            <h5 class="mt-0">{{Title}}</h5>
-            <p>{{Text}}</p>
-          </b-media>
+        <b-card :title="Title">
+          <mavon-editor
+            class="md"
+            :value="Text"
+            :subfield="subfield"
+            :defaultOpen="defaultOpen"
+            :toolbarsFlag="toolbarsFlag "
+          ></mavon-editor>
         </b-card>
       </b-col>
     </b-row>
@@ -33,12 +32,15 @@ export default {
       ArticleID: this.$route.params.ArticleID,
       UserID: "",
       Title: "",
-      Text: ""
+      Text: "",
+      subfield: false, // false单栏模式 true 双栏模式
+      toolbarsFlag: false, // false不展示工具
+      defaultOpen: "preview"
     };
   },
   mounted() {
     this.axios
-      .get(this.$store.state.BASEURL + "/article/single", {
+      .get(this.$store.state.BASEURL + "/article", {
         params: { ArticleID: this.ArticleID }
       })
       .then(response => {
