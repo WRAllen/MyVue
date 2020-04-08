@@ -22,7 +22,7 @@
           <template v-slot:button-content>
             <em>{{ user_name }}</em>
           </template>
-          <b-dropdown-item to="/CUArticle">写文章</b-dropdown-item>
+          <b-dropdown-item to="/cu_article">写文章</b-dropdown-item>
           <b-dropdown-item @click="LoginOut">注销</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-navbar-nav v-else right>

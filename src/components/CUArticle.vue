@@ -8,17 +8,12 @@
           </b-form-group>
 
           <b-form-group label="文章内容" label-for="input_text" description="这里输入文章内容">
-            <b-form-textarea
-              id="input_text"
-              v-model="form.Text"
-              placeholder="这里输入文章内容"
-              rows="6"
-              max-rows="9"
-            ></b-form-textarea>
+            <mavon-editor class="md" v-model="form.Text"></mavon-editor>
           </b-form-group>
-
-          <b-button to="/home" variant="warning">取消</b-button>
-          <b-button type="submit" variant="primary">提交</b-button>
+          <b-form-group>
+            <b-button to="/home" variant="warning">取消</b-button>&nbsp;
+            <b-button type="submit" variant="primary">提交</b-button>
+          </b-form-group>
         </b-form>
       </b-col>
     </b-row>

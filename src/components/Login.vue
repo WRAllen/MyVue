@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       form: {
-        UserName: "admin",
-        Password: "123456"
+        UserName: "",
+        Password: ""
       }
     };
   },
