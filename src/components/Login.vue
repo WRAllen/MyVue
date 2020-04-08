@@ -16,7 +16,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-button to="/" variant="info">返回</b-button>
+        <b-button to="/" variant="info">返回</b-button>&nbsp;
         <b-button @click="Login" variant="danger">登录</b-button>
       </b-form>
     </b-row>

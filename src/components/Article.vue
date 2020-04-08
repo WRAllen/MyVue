@@ -2,24 +2,23 @@
   <b-container>
     <b-row>
       <b-col cols="12">
-        <div>
-          <b-button to="/home" variant="warning">返回</b-button>
-          <b-button variant="success" v-if="own" @click="ChangeArticle">修改</b-button>
+        <h4>
+          {{Title}}
+          <b-button v-b-toggle.collapse-2 class="m-1" variant="light">+</b-button>
+        </h4>
+
+        <b-collapse id="collapse-2">
+          <b-button to="/home" variant="warning">返回</b-button>&nbsp;
+          <b-button variant="success" v-if="own" @click="ChangeArticle">修改</b-button>&nbsp;
           <b-button variant="danger" v-if="own" @click="DeleteArticle">删除</b-button>
-        </div>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col cols="12">
-        <b-card :title="Title">
-          <mavon-editor
-            class="md"
-            :value="Text"
-            :subfield="subfield"
-            :defaultOpen="defaultOpen"
-            :toolbarsFlag="toolbarsFlag "
-          ></mavon-editor>
-        </b-card>
+        </b-collapse>
+        <mavon-editor
+          class="md"
+          :value="Text"
+          :subfield="subfield"
+          :defaultOpen="defaultOpen"
+          :toolbarsFlag="toolbarsFlag "
+        ></mavon-editor>
       </b-col>
     </b-row>
   </b-container>
@@ -29,7 +28,7 @@
 export default {
   data() {
     return {
-      ArticleID: this.$route.params.ArticleID,
+      ArticleID: this.$route.query.ArticleID,
       UserID: "",
       Title: "",
       Text: "",

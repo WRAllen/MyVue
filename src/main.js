@@ -22,6 +22,8 @@ import store from './store'
 // markdown
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+// animated
+import animated from 'animate.css'
 
 
 Vue.config.productionTip = false
@@ -34,6 +36,8 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 // markdown
 Vue.use(mavonEditor)
+// animated
+Vue.use(animated)
 
 const router = new VueRouter({
   mode: "history",

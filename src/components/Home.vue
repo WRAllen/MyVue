@@ -14,8 +14,8 @@
         ></b-card>
       </b-col>
     </b-row>
-    <b-row>
-      <h3>{{page_info}}</h3>
+    <b-row align-h="center">
+      <b-button variant="light">{{page_info}}</b-button>
     </b-row>
   </b-container>
 </template>
@@ -32,7 +32,24 @@ export default {
   },
   methods: {
     jump(id) {
-      this.$router.push({ name: "article", params: { ArticleID: id } });
+      this.$router.push({ name: "article", query: { ArticleID: id } });
+    },
+    get_article() {
+      console.log("开始请求");
+      this.requesting = true;
+      this.axios
+        .get(this.$store.state.BASEURL + "/article_list", {
+          params: { Page: this.page }
+        })
+        .then(response => {
+          if (response.data.length == 0) {
+            this.page_info = "没有内容了";
+          } else {
+            this.datas = this.datas.concat(response.data);
+            this.requesting = false;
+            this.page += 1;
+          }
+        });
     },
     scroll() {
       console.log("开始滚动");
@@ -43,21 +60,7 @@ export default {
           window.innerHeight <=
         50;
       if (bottomOfWindow && this.requesting == false) {
-        console.log("开始请求");
-        this.requesting = true;
-        this.axios
-          .get(this.$store.state.BASEURL + "/article_list", {
-            params: { Page: this.page }
-          })
-          .then(response => {
-            if (response.data.length == 0) {
-              this.page_info = "没有内容了";
-            } else {
-              this.datas = this.datas.concat(response.data);
-              this.requesting = false;
-              this.page += 1;
-            }
-          });
+        this.get_article();
       }
     }
   },
@@ -78,6 +81,7 @@ export default {
         this.datas = this.datas.concat(response.data);
       });
     this.page += 1;
+    this.get_article();
   }
 };
 </script>
