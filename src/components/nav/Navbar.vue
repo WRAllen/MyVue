@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info" sticky>
+  <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand to="/" exact exact-active-class="active">WRAllen</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

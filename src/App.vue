@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
+import Navbar from "./components/nav/Navbar";
 
 export default {
   name: "App",
@@ -36,6 +36,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

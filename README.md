@@ -22,9 +22,4 @@ npm install
 npm run serve
 ```
 
-### 安装相应的markdown插件-mavonEditor
-```
-npm install mavon-editor --save
-```
-
 

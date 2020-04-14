@@ -8,9 +8,9 @@
         </h4>
 
         <b-collapse id="collapse-2">
-          <b-button to="/home" variant="warning">返回</b-button>&nbsp;
-          <b-button variant="success" v-if="own" @click="ChangeArticle">修改</b-button>&nbsp;
-          <b-button variant="danger" v-if="own" @click="DeleteArticle">删除</b-button>
+          <b-button to="/home" variant="light">返回</b-button>&nbsp;
+          <b-button variant="light" v-if="own" @click="ChangeArticle">修改</b-button>&nbsp;
+          <b-button variant="light" v-if="own" @click="DeleteArticle">删除</b-button>
         </b-collapse>
         <mavon-editor
           class="md"
