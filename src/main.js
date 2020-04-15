@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 // bootstrapVue
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // markdown
@@ -20,7 +20,9 @@ Vue.config.productionTip = false
 
 // bootstrapVue
 Vue.use(BootstrapVue)
-Vue.use(BootstrapVueIcons)
+
+
+
 // markdown
 Vue.use(mavonEditor)
 // animated
