@@ -14,7 +14,7 @@
           variant="outline-primary"
           class="btn-default animated bounce delay-1s"
           to="/home"
-        >进入-></b-button>
+        >知其然知其所以然</b-button>
       </b-col>
       <b-col></b-col>
     </b-row>

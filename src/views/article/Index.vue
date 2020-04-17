@@ -10,12 +10,12 @@
           img-top
           tag="article"
           style="max-width: 20rem;"
-          class="mb-2"
+          class="mb-2 animated bounceInUp"
         ></b-card>
       </b-col>
     </b-row>
     <b-row align-h="center">
-      <b-button variant="light">{{page_info}}</b-button>
+      <b-button variant="light" @click="get_article()">{{page_info}}</b-button>
     </b-row>
   </b-container>
 </template>
@@ -85,6 +85,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

@@ -65,7 +65,7 @@ export default {
   methods: {
     ChangeArticle() {
       this.$router.push({
-        name: "CUArticle",
+        name: "cu_article",
         params: { ArticleID: this.ArticleID }
       });
     },
