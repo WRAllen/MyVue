@@ -1,7 +1,7 @@
 <template>
   <b-container class="page-home text-center my-3">
     <b-row>
-      <b-form inline @submit="onSubmit">
+      <b-form inline @submit="onSubmit" class="animated bounceInLeft">
         <label>态度：</label>
         <b-form-select class="mb-2 mr-sm-2 mb-sm-0" :options="attitudes" v-model="attitude_type"></b-form-select>
         <b-input class="mb-2 mr-sm-2 mb-sm-0" placeholder="例如:鞋子" v-model.trim="good_type"></b-input>
@@ -9,10 +9,10 @@
       </b-form>
     </b-row>
     <b-row class="my-3">
-      <b-button variant="light" @click="copy_comment">复制评价</b-button>
+      <b-button class="animated bounceInDown" variant="light" @click="copy_comment">复制评价</b-button>
       <b-form-textarea
         id="comment"
-        class="my-3"
+        class="my-3 animated bounceInUp"
         v-model.trim="text"
         placeholder="评价显示区域"
         rows="3"

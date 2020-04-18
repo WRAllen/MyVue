@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row>
+    <b-row class="animated fadeIn">
       <b-col cols="12">
         <b-form @submit="onSubmit">
           <b-form-group label="文章标题" label-for="input_title" description="这里输入文章标题，不要超过50个字符">

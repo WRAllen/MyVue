@@ -3,7 +3,7 @@
     <b-row>
       <b-col></b-col>
       <b-col md="auto">
-        <h1 class="animated shake" style="font-size:150px">WRAllen</h1>
+        <h1 class="animated flipInX" style="font-size:150px">WRAllen</h1>
       </b-col>
       <b-col></b-col>
     </b-row>
