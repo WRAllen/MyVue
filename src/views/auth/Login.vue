@@ -52,7 +52,11 @@ export default {
             }
           });
       } else {
-        alert("用户名或者密码不能为空!");
+        this.$bvToast.toast("用户名或者密码不能为空!", {
+          title: "消息",
+          variant: "danger",
+          solid: true
+        });
       }
     }
   },

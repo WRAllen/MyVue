@@ -1,3 +1,3 @@
 <template>
-  <b-modal id="auth_failer_model" title="登录超时">请重新登录！</b-modal>
+  <b-modal id="test_model" title="测试">测试</b-modal>
 </template>

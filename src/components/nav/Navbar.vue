@@ -9,6 +9,7 @@
         <b-nav-item to="/home" exact exact-active-class="active">主页</b-nav-item>
         <b-nav-item to="/test" exact exact-active-class="active">测试</b-nav-item>
         <b-nav-item to="/test_two" exact exact-active-class="active">测试2</b-nav-item>
+        <b-nav-item to="/gb_comment" exact exact-active-class="active">GBComment</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->

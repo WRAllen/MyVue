@@ -52,9 +52,12 @@ export default {
           .post(this.$store.state.BASEURL + "/article", this.form)
           .then(response => {
             if (response.data.code == 204) {
-              alert(response.data.message);
+              this.$bvToast.toast(response.data.message, {
+                title: "消息",
+                variant: "danger",
+                solid: true
+              });
             } else {
-              alert(response.data.message);
               this.$router.push("/home");
             }
           });
@@ -63,9 +66,12 @@ export default {
           .put(this.$store.state.BASEURL + "/article", this.form)
           .then(response => {
             if (response.data.code == 204) {
-              alert(response.data.message);
+              this.$bvToast.toast(response.data.message, {
+                title: "消息",
+                variant: "danger",
+                solid: true
+              });
             } else {
-              alert(response.data.message);
               this.$router.push("/home");
             }
           });

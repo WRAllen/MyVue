@@ -10,6 +10,7 @@ import Login from '../views/auth/Login'
 import Sign from '../views/auth/Sign'
 import Test from '../views/test/Test'
 import TestTwo from '../views/test/TestTwo'
+import GBComment from '../views/gbcomment/GBComment'
 
 
 Vue.use(VueRouter)
@@ -24,8 +25,9 @@ const router = new VueRouter({
         { path: "/cu_article", component: CUArticle, name: "cu_article", meta: { auth: true } },
         { path: "/login", component: Login, name: "login" },
         { path: "/sign", component: Sign, name: "sign" },
-        { path: "/test", component: Test },
-        { path: "/test_two", component: TestTwo }
+        { path: "/test", component: Test, name: "test" },
+        { path: "/test_two", component: TestTwo, name: "test_two" },
+        { path: "/gb_comment", component: GBComment, name: "gb_comment" }
     ]
 })
 export default router
