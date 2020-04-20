@@ -17,6 +17,7 @@ NProgress.configure({ showSpinner: true })
 router.beforeEach((to, from, next) => {
     NProgress.start()
     axios.defaults.headers.common['Token'] = store.state.Token;
+    axios.defaults.headers.common['UserID'] = store.state.UserID;
     if (!to.meta.auth) {
         next();
     } else {
