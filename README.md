@@ -22,4 +22,28 @@ npm install
 npm run serve
 ```
 
+## 部署后-刷新页面出现404问题
+由于router的`mode: "history",`会导致刷新出现问题，如果不用history的化url又会多一个#出来
+下面是解决方法
+```
+server {
+	listen 80;
+	server_name localhost;
+	location / {
+        # 下面是dist的地址
+		root /home/work/MyVue/dist;
+        # 添加这一句
+		try_files $uri $uri/ @router;
+		index index.html;
+	}  
+    # 添加下面这个
+	location @router {
+		rewrite ^.*$ /index.html last;
+	}  
+}
 
+```
+然后重启nginx
+```
+nginx -s reload  
+```

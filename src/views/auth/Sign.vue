@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row align-h="center">
+    <b-row align-h="center" style="margin-top:10%">
       <b-form>
         <b-form-group label="用户名:" label-for="UserName">
           <b-form-input id="UserName" v-model="form.UserName" required placeholder="输入用户名"></b-form-input>
@@ -26,7 +26,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-button to="/" variant="info">返回</b-button>
+        <b-button to="/" variant="info">返回</b-button>&nbsp;
         <b-button @click="Sign" variant="danger">注册</b-button>
       </b-form>
     </b-row>

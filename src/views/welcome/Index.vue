@@ -1,22 +1,18 @@
 <template>
-  <b-container fluid>
+  <b-container>
     <b-row>
-      <b-col></b-col>
-      <b-col md="auto">
-        <h1 class="animated flipInX" style="font-size:150px">WRAllen</h1>
+      <b-col cols="12" class="text-center" style="margin-top:15%">
+        <h1 class="animated flipInX" style="font-size:75px">WRAllen</h1>
       </b-col>
-      <b-col></b-col>
     </b-row>
     <b-row>
-      <b-col></b-col>
-      <b-col md="auto">
+      <b-col cols="12" class="text-center">
         <b-button
           variant="outline-primary"
           class="btn-default animated bounce delay-1s"
           to="/home"
         >知其然知其所以然</b-button>
       </b-col>
-      <b-col></b-col>
     </b-row>
   </b-container>
 </template>

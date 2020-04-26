@@ -1,6 +1,6 @@
 <template>
   <b-container class="my-5">
-    <b-row align-h="center">
+    <b-row align-h="center" style="margin-top:15%">
       <b-form>
         <b-form-group label="用户名:" label-for="UserName">
           <b-form-input id="UserName" v-model="form.UserName" required placeholder="输入用户名"></b-form-input>

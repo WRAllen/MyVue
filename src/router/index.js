@@ -8,8 +8,8 @@ import Article from '../views/article/Article'
 import CUArticle from '../views/article/CUArticle'
 import Login from '../views/auth/Login'
 import Sign from '../views/auth/Sign'
+import About from '../views/about/Index'
 import Test from '../views/test/Test'
-import TestTwo from '../views/test/TestTwo'
 import GBComment from '../views/gbcomment/GBComment'
 
 
@@ -25,8 +25,8 @@ const router = new VueRouter({
         { path: "/cu_article", component: CUArticle, name: "cu_article", meta: { auth: true } },
         { path: "/login", component: Login, name: "login" },
         { path: "/sign", component: Sign, name: "sign" },
+        { path: "/about", component: About, name: "about" },
         { path: "/test", component: Test, name: "test" },
-        { path: "/test_two", component: TestTwo, name: "test_two" },
         { path: "/gb_comment", component: GBComment, name: "gb_comment" }
     ]
 })
